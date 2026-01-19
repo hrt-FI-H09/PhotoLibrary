@@ -57,7 +57,7 @@ let isSelectMode = false;
 photoFiles.forEach(fileName => {
     const div = document.createElement('div');
     div.classList.add('photo-item');
-    div.innerHTML = `<img src="images/${fileName}" data-src="images/${fileName}" alt="photo">`;
+    div.innerHTML = `<img src="images/${fileName}" data-src="images/${fileName}" alt="photo" loading="lazy">`;
     div.addEventListener('click', () => handlePhotoClick(div, fileName));
     gallery.appendChild(div);
 });
@@ -112,4 +112,5 @@ downloadBtn.addEventListener('click', async () => {
 });
 
 // ライトボックスを閉じる
+
 document.querySelector('.close').onclick = () => lightbox.style.display = 'none';
