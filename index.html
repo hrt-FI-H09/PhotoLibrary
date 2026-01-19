@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同窓会フォトギャラリー</title>
+    <link rel="stylesheet" href="P_style.css">
+</head>
+<body>
+
+<header>
+    <h1>同窓会ギャラリー</h1>
+    <div class="controls">
+        <button id="modeToggle">選択モードにする</button>
+        <button id="downloadBtn" style="display: none;">選択した画像を保存</button>
+    </div>
+</header>
+
+<main id="gallery" class="gallery-grid">
+    </main>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script src="P_script.js"></script>
+</body>
+</html>
