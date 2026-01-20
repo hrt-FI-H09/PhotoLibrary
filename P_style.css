@@ -90,4 +90,12 @@ header {
     color: white;
     font-size: 40px;
     cursor: pointer;
+
+}
+
+/* PCでは表示されるが、画面幅が768px以下の時に隠す */
+@media (max-width: 768px) {
+    #modeToggle, #downloadBtn {
+        display: none !important;
+    }
 }
