@@ -64,12 +64,16 @@ photoFiles.forEach(fileName => {
 
 // 2. モード切り替え
 modeToggle.addEventListener('click', () => {
+    // 画面幅が狭い（スマホ）場合は何もしない
+    if (window.innerWidth <= 768) return;
+
     isSelectMode = !isSelectMode;
     document.body.classList.toggle('select-mode', isSelectMode);
     modeToggle.textContent = isSelectMode ? '選択を解除' : '選択モードにする';
+    
+    // CSSの!importantに任せるか、JSで制御
     downloadBtn.style.display = isSelectMode ? 'inline-block' : 'none';
     
-    // モード解除時に選択をリセット
     if (!isSelectMode) {
         document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
     }
@@ -114,3 +118,4 @@ downloadBtn.addEventListener('click', async () => {
 // ライトボックスを閉じる
 
 document.querySelector('.close').onclick = () => lightbox.style.display = 'none';
+
